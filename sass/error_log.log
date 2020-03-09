@@ -1,0 +1,5 @@
+03/05/20 9:10:01: C:\Users\Matt\Local Sites\horvay-group\app\public/wp-content/plugins/wp-scss/cache/ - File Permission Error, permission denied. Please make the cache directory writable.
+03/05/20 9:11:02: C:\Users\Matt\Local Sites\horvay-group\app\public/wp-content/plugins/wp-scss/cache/ - File Permission Error, permission denied. Please make the cache directory writable.
+03/05/20 9:13:03: C:\Users\Matt\Local Sites\horvay-group\app\public/wp-content/plugins/wp-scss/cache/ - File Permission Error, permission denied. Please make the cache directory writable.
+03/05/20 9:15:03: C:\Users\Matt\Local Sites\horvay-group\app\public/wp-content/plugins/wp-scss/cache/ - File Permission Error, permission denied. Please make the cache directory writable.
+03/07/20 11:37:32: style.scss - parse error: failed at `background-color: @color__brand-primary;` C:\Users\Matt\Local Sites\horvay-group\app\public/wp-content/themes/horvay-group/sass/style.scss on line 125

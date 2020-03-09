@@ -1,0 +1,204 @@
+/*!
+Theme Name: horvay-group
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: horvay-group
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+
+$color__brand-primary: #1e2f5d;
+$color__brand-secondary: #61b346;
+$color__neutral-light: #fff;
+$color__neutral-dark: #000;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+html {
+	margin: 0;
+}
+
+body {
+	margin: 0;
+	font-family: 'Spartan', sans-serif;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+	font-size: 3rem;
+	font-weight: normal;
+	line-height: 1;
+}
+
+h1 a {
+	color: inherit;
+	text-decoration: none;
+}
+
+h2 {
+	position: relative;
+}
+
+h2:before, h2:after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	border: 1px solid $color__brand-secondary;
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+h2:before {
+	top: -50%;
+	left: 20px;
+}
+
+p + p {
+	margin-top: 1rem;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+figure {
+	margin: 0;
+}
+
+.wp-block-image {
+	margin: 0;
+}
+
+a {
+	color: $color__brand-secondary;
+}
+
+/*Screen reader*/
+.skip-link {
+	background-color: $color__neutral-light;
+}
+
+.show-on-focus {
+    margin: 0;
+    clip: rect(1px,1px,1px,1px);
+    position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.show-on-focus:focus {
+	z-index: 20;
+	width: auto;
+	height: auto;
+	clip: auto;
+}
+
+/*Site Header*/
+.custom-logo {
+	max-width: 150px;
+}
+
+.site-header {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	text-align: center;
+	align-items: center;
+}
+
+.site-branding {
+
+}
+
+.main-navigation .menu {
+	list-style: none;
+	padding: 0;
+}
+
+.post-thumbnail img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	max-height: 80vh;
+	display: block;
+}
+
+/*Content*/
+#content {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	background-color: $color__brand-primary;
+}
+
+.entry-footer {
+	display: none;
+}
+
+/*Card*/
+.card {
+	background-color: $color__neutral-light;
+	box-shadow: 2px 2px 2px rgba($color__neutral-dark, .5);
+	grid-column: span 2;
+	padding: 40px;
+	margin: 80px -20px;
+}
+
+@for $i from 1 through 10 {
+  .card:nth-of-type(#{$i}) { 
+  	z-index: 11 - $i;
+  }
+}
+
+.card:last-of-type {
+	margin-top: -40px;
+}
+
+/*Entry header*/
+.entry-header {
+	background-color: $color__neutral-light;
+	grid-column: 3 / span 2;
+	margin: -20px;
+}
+
+.entry-title {
+	display: grid;
+	grid-template-columns: auto auto;
+	align-items: center;
+	text-transform: capitalize;
+	i {
+		color: $color__brand-secondary;
+		grid-row: span 2;
+		font-size: 7rem;
+		margin-left: -40%;
+		z-index: -1;
+		font-style: normal;
+		line-height: 0;
+		margin-bottom: -10px;
+	}
+}
+
+/*Image Screen*/
+.screen {
+	grid-column: span 3;
+}
+
+/*Utility Classes*/
+.span-2 {
+	grid-column: span 2;
+}
+.span-3 {
+	grid-column: span 3;
+}
