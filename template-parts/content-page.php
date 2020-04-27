@@ -10,12 +10,14 @@
 ?>
 
 <article id="content" <?php post_class(); ?>>
-	<header class="entry-header card">
-		<?php 
-			the_title( '<h1 class="entry-title">', '</h1>' ); 
-			the_excerpt();
-		?>
-	</header><!-- .entry-header -->
+	<div class="entry-header-wrapper">
+		<header class="entry-header paper">
+			<?php 
+				the_title( '<h1 class="entry-title">', '</h1>' ); 
+				the_excerpt();
+			?>
+		</header><!-- .entry-header -->
+	</div>
 	<?php
 		the_content();
 

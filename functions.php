@@ -163,6 +163,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Replace div with section on group block.
+ */
+
 function group_block_wrapper( $block_content, $block ) {
     if ( $block['blockName'] === 'core/group' ) {
     	$pattern = '((?<=\n<)div|div(?=>$))';
@@ -175,3 +179,17 @@ function group_block_wrapper( $block_content, $block ) {
 }
  
 add_filter( 'render_block', 'group_block_wrapper', 10, 2 );
+
+/**
+ * Fix width of blocks in editor.
+ */
+
+add_action('admin_head', 'increase_editor_width');
+
+function increase_editor_width() {
+  echo '<style>
+    .wp-block, .card {
+      max-width: initial;
+    } 
+  </style>';
+}

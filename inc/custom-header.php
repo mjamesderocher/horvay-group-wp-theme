@@ -36,12 +36,13 @@ if ( ! function_exists( 'horvay_group_header_style' ) ) :
 	 */
 	function horvay_group_header_style() {
 		$header_text_color = get_header_textcolor();
+		$display_title = get_theme_mod( 'display_title' );
 
 		/*
 		 * If no custom options for text are set, let's bail.
 		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
 		 */
-		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
+		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color && $display_title== 0 ) {
 			return;
 		}
 
@@ -50,7 +51,7 @@ if ( ! function_exists( 'horvay_group_header_style' ) ) :
 		<style type="text/css">
 		<?php
 		// Has the text been hidden?
-		if ( ! display_header_text() ) :
+		if ( ! display_header_text()) :
 			?>
 			.site-title,
 			.site-description {
@@ -64,6 +65,13 @@ if ( ! function_exists( 'horvay_group_header_style' ) ) :
 			.site-title a,
 			.site-description {
 				color: #<?php echo esc_attr( $header_text_color ); ?>;
+			}
+		<?php endif; 
+		if ( $display_title == 1) :
+			?>
+			.site-title {
+				position: absolute;
+				clip: rect(1px, 1px, 1px, 1px);
 			}
 		<?php endif; ?>
 		</style>

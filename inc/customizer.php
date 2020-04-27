@@ -14,6 +14,29 @@ function horvay_group_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	
+	/**
+	 * Add Checkbox to Display Site Title.
+	 */
+
+	$wp_customize->add_setting( 'display_title',
+	   array(
+	      'default' => 0,
+	      'transport' => 'refresh'
+	   )
+	);
+	 
+	$wp_customize->add_control( 'display_title',
+	   array(
+	      'label' => __( 'Force Hide Site Title'),
+	      'description' => esc_html__( 'Check this if you want to display the description, but not the title.' ),
+	      'section'  => 'title_tagline',
+	      'priority' => 50, // Optional. Order priority to load the control. Default: 10
+	      'type'=> 'checkbox',
+	      'capability' => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
+	   )
+	);
+
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
